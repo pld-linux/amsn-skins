@@ -1,7 +1,7 @@
 Summary:	Skins for aMSN
 Name:		amsn-skins
 Version:	0.1
-Release:	0.4
+Release:	1
 License:	GPL
 Group:		Themes
 Source0:	http://downloads.sourceforge.net/amsn/amsn-0.98.1.tar.gz
@@ -25,6 +25,7 @@ Version:	2.0
 License:	GPL
 Group:		Themes
 URL:		http://www.amsn-project.net/skins.php
+Provides:	amsn-skin
 
 %description -n amsn-skin-default
 Sapphire Skin by Gustavo A. Diaz.
@@ -35,6 +36,7 @@ Version:	4.0
 License:	GPL
 Group:		Themes
 URL:		http://www.amsn-project.net/skins.php
+Provides:	amsn-skin
 
 %description -n amsn-skin-Dark_Matter
 Dark Matter Skin for aMSN.
@@ -45,6 +47,7 @@ Version:	1.0
 License:	GPL
 Group:		Themes
 URL:		http://www.amsn-project.net/skins.php
+Provides:	amsn-skin
 
 %description -n amsn-skin-aMSN_Live
 WLMSN look alike skin for aMSN.
@@ -52,10 +55,19 @@ WLMSN look alike skin for aMSN.
 %prep
 %setup -qc -a1
 
+# prep skins
 install -d skins
 mv amsn-*/skins/default skins
 mv amsn-*/skins/'Dark Matter 4.0' skins/Dark_Matter
 mv 'aMSN Live-1.0' skins/aMSN_Live
+
+# cleanups
+find skins -name 'winicons' | xargs rm -rv
+find skins -name '*.xcf' | xargs rm -fv
+
+# not part of skin, setting up needs patching amsn itself, besides, seems outdated
+rm -rf skins/aMSN_Live/pixmapmenu
+rm -rf skins/aMSN_Live/pixmapscroll
 
 find '(' -name '*~' -o -name '*.orig' ')' -print0 | xargs -0 -r -l512 rm -f
 
