@@ -1,7 +1,7 @@
 Summary:	Skins for aMSN
 Name:		amsn-skins
 Version:	0.1
-Release:	2
+Release:	3
 License:	GPL
 Group:		Themes
 Source0:	http://downloads.sourceforge.net/amsn/amsn-0.98.1.tar.gz
@@ -9,7 +9,9 @@ Source0:	http://downloads.sourceforge.net/amsn/amsn-0.98.1.tar.gz
 Source1:	http://downloads.sourceforge.net/project/amsn/amsn-skins/0.95-skins/aMSN_Live-1.0.tar.gz
 # Source1-md5:	5079184f1f75d6b53ca6e7577aa5b66d
 URL:		http://www.amsn-project.net/skins.php
+Requires:	amsn-skin-Dark_Matter
 Requires:	amsn-skin-aMSN_Live
+Requires:	amsn-skin-default
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
