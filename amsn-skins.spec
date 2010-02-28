@@ -1,7 +1,7 @@
 Summary:	Skins for aMSN
 Name:		amsn-skins
 Version:	0.1
-Release:	1
+Release:	2
 License:	GPL
 Group:		Themes
 Source0:	http://downloads.sourceforge.net/amsn/amsn-0.98.1.tar.gz
@@ -65,11 +65,17 @@ mv 'aMSN Live-1.0' skins/aMSN_Live
 find skins -name 'winicons' | xargs rm -rv
 find skins -name '*.xcf' | xargs rm -fv
 
+# standard GPL license
+rm skins/aMSN_Live/license
+rm skins/default/license
+rm skins/Dark_Matter/license
+
 # not part of skin, setting up needs patching amsn itself, besides, seems outdated
 rm -rf skins/aMSN_Live/pixmapmenu
 rm -rf skins/aMSN_Live/pixmapscroll
 
-find '(' -name '*~' -o -name '*.orig' ')' -print0 | xargs -0 -r -l512 rm -f
+find skins '(' -name '*.txt' -o -name '*.xml' -o -name 'license' ')' -print0 | xargs -0 %{__sed} -i -e 's,\r$,,'
+find skins '(' -name '*~' -o -name '*.orig' ')' -print0 | xargs -0 -r -l512 rm -f
 
 %install
 rm -rf $RPM_BUILD_ROOT
