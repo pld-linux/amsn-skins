@@ -1,11 +1,12 @@
 Summary:	Skins for aMSN
 Name:		amsn-skins
 Version:	0.1
-Release:	3
+# Never decrease release, as subpackages then do not get an update
+Release:	4
 License:	GPL
 Group:		Themes
-Source0:	http://downloads.sourceforge.net/amsn/amsn-0.98.1.tar.gz
-# Source0-md5:	8c608673a4e920b83cc9f41c2cb837dc
+Source0:	http://downloads.sourceforge.net/project/amsn/amsn/0.98.3/amsn-0.98.3-src.tar.gz
+# Source0-md5:	4f6e75e422694d2adce68b773b459223
 Source1:	http://downloads.sourceforge.net/project/amsn/amsn-skins/0.95-skins/aMSN_Live-1.0.tar.gz
 # Source1-md5:	5079184f1f75d6b53ca6e7577aa5b66d
 URL:		http://www.amsn-project.net/skins.php
